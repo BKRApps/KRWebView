@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h1>Simple Demo to explanin Web Interceptors in iOS</p>
+         <h2>Below image loaded from custom remote service <h2>
+             <img src="custom-scheme://path?url=http:\//placehold.it/120x120&text=image1&type=remote&jsonValues={'a':[{'key':'value'}]}" alt="Smiley face" width="250" height="250">
+         <img src="http://placehold.it/120x120&text=image2" alt="Smiley face" width="250" height="250">
+        <a href="custom-scheme://events?screenName=cart&event-type=ecommerce-cart-remove-item&attributes={'products':[{'Style-Id':1756798,'Style-Name':'Nike Men Navy Blue AIR RELENTLESS 6 MSL Running Shoes','SKU':12892611,'Size':'US10','Size-Details':{'size':'US10','unifiedSize':'9','skuId':12892611,'available':true,'availableQuantity':10,'itemAvailabilityDetailMap':{'21':{'sellerId':21,'storeId':1,'sellerName':'Funfash','availableCount':31,'supplyType':'ON_HAND','availableInWarehouses':'36,81,28','leadTime':0}}},'Brand':'Nike','Article-Type':95,'Gender':'Men','MRP':5795,'Price':4103,'Quantity':1}]}"> Click here to send Events </a>
+
+        <button onclick="myFunction()">Click me </button>
+        <p id="demo"></p>
+        <script>
+            function myFunction() {
+                document.getElementById("demo").innerHTML = " Hello"
+                document.location.href = "custom-scheme://kumar?key=value&key2=value2"
+            }
+        </script>
+    </body>
+</html>
+

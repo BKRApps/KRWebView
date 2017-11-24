@@ -1,0 +1,6 @@
+framework module Pods_KRWebView {
+  umbrella header "Pods-KRWebView-umbrella.h"
+
+  export *
+  module * { export * }
+}
