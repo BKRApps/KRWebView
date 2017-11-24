@@ -10,8 +10,6 @@ import UIKit
 import WebKit
 import Alamofire
 
-
-
 class ViewController: UIViewController,UIWebViewDelegate {
 
     var webview : UIWebView?

@@ -11,7 +11,7 @@ import WebKit
 import Alamofire
 
 enum WebErrors: Error {
-    case SimpleFail
+    case RequestFailedError
 }
 
 
@@ -22,6 +22,7 @@ class WKWebViewObject: NSObject,WKNavigationDelegate {
 @available(iOS 11.0, *)
 class CustomeSchemeHandler : NSObject,WKURLSchemeHandler {
 
+    var imagePicker : ImagePicker!
     func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
         print("Request : \(urlSchemeTask.request.url!)")
         DispatchQueue.global().async {
@@ -36,6 +37,15 @@ class CustomeSchemeHandler : NSObject,WKURLSchemeHandler {
                                 urlSchemeTask.didReceive(response.data!)
                                 urlSchemeTask.didFinish()
                             })
+                        }else if queryParams.name == "type" && queryParams.value == "local" {
+                            DispatchQueue.main.async {
+                                self.imagePicker = ImagePicker()
+                                self.imagePicker.showGallery(cHandler: { (response, data) in
+                                    urlSchemeTask.didReceive(response!)
+                                    urlSchemeTask.didReceive(data!)
+                                    urlSchemeTask.didFinish()
+                                })
+                            }
                         }
                     }
                 }
@@ -44,6 +54,6 @@ class CustomeSchemeHandler : NSObject,WKURLSchemeHandler {
     }
 
     func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
-        urlSchemeTask.didFinish()
+        urlSchemeTask.didFailWithError(WebErrors.RequestFailedError)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D2EA8121FC88908007E29A5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2EA8111FC88908007E29A5 /* ImagePicker.swift */; };
 		2D8DD8C01FC2B51B00824C8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DD8BF1FC2B51B00824C8E /* AppDelegate.swift */; };
 		2D8DD8C21FC2B51B00824C8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DD8C11FC2B51B00824C8E /* ViewController.swift */; };
 		2D8DD8C51FC2B51B00824C8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D8DD8C31FC2B51B00824C8E /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D2EA8111FC88908007E29A5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		2D8DD8BC1FC2B51B00824C8E /* KRWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KRWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D8DD8BF1FC2B51B00824C8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D8DD8C11FC2B51B00824C8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				2D8DD8D31FC2B63900824C8E /* WKWebViewObject.swift */,
 				2D8DD8D51FC2D38A00824C8E /* sample.html */,
 				2D8DD8DE1FC30C7200824C8E /* Constants.swift */,
+				2D2EA8111FC88908007E29A5 /* ImagePicker.swift */,
 			);
 			path = KRWebView;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				2D8DD8DF1FC30C7200824C8E /* Constants.swift in Sources */,
 				2D8DD8C21FC2B51B00824C8E /* ViewController.swift in Sources */,
 				2D8DD8C01FC2B51B00824C8E /* AppDelegate.swift in Sources */,
+				2D2EA8121FC88908007E29A5 /* ImagePicker.swift in Sources */,
 				2D8DD8D41FC2B63900824C8E /* WKWebViewObject.swift in Sources */,
 				2D8DD8D21FC2B5C800824C8E /* UIWebViewObject.swift in Sources */,
 			);
