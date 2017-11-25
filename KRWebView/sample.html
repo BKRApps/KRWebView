@@ -1,23 +1,13 @@
 <!DOCTYPE html>
 <html>
     <body>
-
         <h1> Simple Demo to explanin Web Interceptors in iOS  </h1>
         <h2> load the Image using normal http </h2>
-        <img src="http://placehold.it/120x120&text=image1" alt="Smiley face" width="200" height="200">
+        <img src="http://placehold.it/120x120&text=image1" alt="Smiley face" width="150" height="150">
         <h2> load the image by using custom scheme </h2>
-        <img src="custom-scheme://path?type=remote&url=http:\//placehold.it/120x120&text=image2" alt="Smiley face" width="200" height="200">
+        <img src="custom-scheme://path?type=remote&url=http:\//placehold.it/120x120&text=image1" alt="Smiley face" width="150" height="150">
         <h2> load the image from Photos App </h2>
-        <img src="custom-scheme://path?type=local&url=photos" alt="Smiley face" width="250" height="250">
-
-        <button onclick="myFunction()">Click me </button>
-        <p id="demo"></p>
-        <script>
-            function myFunction() {
-                document.getElementById("demo").innerHTML = " Hello"
-                document.location.href = "custom-scheme://kumar?key=value&key2=value2"
-            }
-        </script>
+        <img src="custom-scheme://path?type=photos" alt="Smiley face" width="250" height="250">
     </body>
 </html>
 

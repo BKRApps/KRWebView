@@ -14,21 +14,17 @@ enum WebErrors: Error {
     case RequestFailedError
 }
 
-
-class WKWebViewObject: NSObject,WKNavigationDelegate {
-    
-}
-
 @available(iOS 11.0, *)
+
 class CustomeSchemeHandler : NSObject,WKURLSchemeHandler {
 
     var imagePicker : ImagePicker!
     func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
-        print("Request : \(urlSchemeTask.request.url!)")
         DispatchQueue.global().async {
             if let url = urlSchemeTask.request.url, url.scheme == Constants.customURLScheme {
                 if let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems {
                     for queryParams in queryItems {
+                        //example : custom-scheme:// path ? type=remote & url=http://placehold.it/120x120&text=image1
                         if queryParams.name == "type" && queryParams.value == "remote" {
                             let queryItem = queryItems.filter({ $0.name == "url" })
                             let value = queryItem[0].value?.replacingOccurrences(of: "\\", with: "")
@@ -37,7 +33,7 @@ class CustomeSchemeHandler : NSObject,WKURLSchemeHandler {
                                 urlSchemeTask.didReceive(response.data!)
                                 urlSchemeTask.didFinish()
                             })
-                        }else if queryParams.name == "type" && queryParams.value == "local" {
+                        }else if queryParams.name == "type" && queryParams.value == "photos" { /* example :  custom-scheme:// path ? type=photos */
                             DispatchQueue.main.async {
                                 self.imagePicker = ImagePicker()
                                 self.imagePicker.showGallery(cHandler: { (response, data) in

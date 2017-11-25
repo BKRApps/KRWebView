@@ -10,17 +10,11 @@ import UIKit
 import Foundation
 import Alamofire
 
-class UIWebViewObject : NSObject,UIWebViewDelegate {
-
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        return true;
-    }
-}
-
 class CustomNSURLProtocol: URLProtocol,NSURLConnectionDelegate,URLSessionDelegate,URLSessionTaskDelegate {
 
+    var imagePicker : ImagePicker!
+
     override class func canInit(with request: URLRequest) -> Bool {
-        print("UIWebivew request \(request.url!)")
         if let url = request.url, url.scheme == Constants.customURLScheme {
             return true
         }
@@ -37,18 +31,11 @@ class CustomNSURLProtocol: URLProtocol,NSURLConnectionDelegate,URLSessionDelegat
     }
 
     override func startLoading() {
-        //let connection = NSURLConnection(request: self.request, delegate: self)
-        //connection?.start()
-
-        /*let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        session.dataTask(with: self.request.url!) { (data, response, error) in
-            print("working");
-        }.resume()*/
         DispatchQueue.global().async {
             if let url = self.request.url, url.scheme == Constants.customURLScheme {
                 if let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems {
                     for queryParams in queryItems {
+                        //example : custom-scheme:// path ? type=remote & url=http://placehold.it/120x120&text=image1
                         if queryParams.name == "type" && queryParams.value == "remote" {
                             let queryItem = queryItems.filter({ $0.name == "url" })
                             let value = queryItem[0].value?.replacingOccurrences(of: "\\", with: "")
@@ -57,6 +44,15 @@ class CustomNSURLProtocol: URLProtocol,NSURLConnectionDelegate,URLSessionDelegat
                                 self.client?.urlProtocol(self, didLoad: response.data!)
                                 self.client?.urlProtocolDidFinishLoading(self)
                             })
+                        }else if queryParams.name == "type" && queryParams.value == "photos" { /* example :  custom-scheme:// path ? type=photos */
+                            DispatchQueue.main.async {
+                                self.imagePicker = ImagePicker()
+                                self.imagePicker.showGallery(cHandler: { (response, data) in
+                                    self.client?.urlProtocol(self, didReceive: response!, cacheStoragePolicy: .notAllowed)
+                                    self.client?.urlProtocol(self, didLoad: data!)
+                                    self.client?.urlProtocolDidFinishLoading(self)
+                                })
+                            }
                         }
                     }
                 }
@@ -65,7 +61,7 @@ class CustomNSURLProtocol: URLProtocol,NSURLConnectionDelegate,URLSessionDelegat
     }
 
     override func stopLoading() {
-
+        
     }
 
 }

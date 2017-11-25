@@ -13,8 +13,8 @@
 		2D8DD8C51FC2B51B00824C8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D8DD8C31FC2B51B00824C8E /* Main.storyboard */; };
 		2D8DD8C71FC2B51B00824C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D8DD8C61FC2B51B00824C8E /* Assets.xcassets */; };
 		2D8DD8CA1FC2B51B00824C8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D8DD8C81FC2B51B00824C8E /* LaunchScreen.storyboard */; };
-		2D8DD8D21FC2B5C800824C8E /* UIWebViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DD8D11FC2B5C800824C8E /* UIWebViewObject.swift */; };
-		2D8DD8D41FC2B63900824C8E /* WKWebViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DD8D31FC2B63900824C8E /* WKWebViewObject.swift */; };
+		2D8DD8D21FC2B5C800824C8E /* UIWebViewHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DD8D11FC2B5C800824C8E /* UIWebViewHandling.swift */; };
+		2D8DD8D41FC2B63900824C8E /* WKWebViewHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DD8D31FC2B63900824C8E /* WKWebViewHandling.swift */; };
 		2D8DD8D61FC2D38A00824C8E /* sample.html in Resources */ = {isa = PBXBuildFile; fileRef = 2D8DD8D51FC2D38A00824C8E /* sample.html */; };
 		2D8DD8DF1FC30C7200824C8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DD8DE1FC30C7200824C8E /* Constants.swift */; };
 		D1373BB60BDB492C8448F2AB /* Pods_KRWebView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1452670162ACB38762AE655 /* Pods_KRWebView.framework */; };
@@ -29,8 +29,8 @@
 		2D8DD8C61FC2B51B00824C8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D8DD8C91FC2B51B00824C8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D8DD8CB1FC2B51B00824C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D8DD8D11FC2B5C800824C8E /* UIWebViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebViewObject.swift; sourceTree = "<group>"; };
-		2D8DD8D31FC2B63900824C8E /* WKWebViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewObject.swift; sourceTree = "<group>"; };
+		2D8DD8D11FC2B5C800824C8E /* UIWebViewHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebViewHandling.swift; sourceTree = "<group>"; };
+		2D8DD8D31FC2B63900824C8E /* WKWebViewHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewHandling.swift; sourceTree = "<group>"; };
 		2D8DD8D51FC2D38A00824C8E /* sample.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = sample.html; sourceTree = "<group>"; };
 		2D8DD8DE1FC30C7200824C8E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7064E8DFB6C1A4E2A0C7545C /* Pods-KRWebView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRWebView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KRWebView/Pods-KRWebView.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,8 +77,8 @@
 				2D8DD8C61FC2B51B00824C8E /* Assets.xcassets */,
 				2D8DD8C81FC2B51B00824C8E /* LaunchScreen.storyboard */,
 				2D8DD8CB1FC2B51B00824C8E /* Info.plist */,
-				2D8DD8D11FC2B5C800824C8E /* UIWebViewObject.swift */,
-				2D8DD8D31FC2B63900824C8E /* WKWebViewObject.swift */,
+				2D8DD8D11FC2B5C800824C8E /* UIWebViewHandling.swift */,
+				2D8DD8D31FC2B63900824C8E /* WKWebViewHandling.swift */,
 				2D8DD8D51FC2D38A00824C8E /* sample.html */,
 				2D8DD8DE1FC30C7200824C8E /* Constants.swift */,
 				2D2EA8111FC88908007E29A5 /* ImagePicker.swift */,
@@ -237,8 +237,8 @@
 				2D8DD8C21FC2B51B00824C8E /* ViewController.swift in Sources */,
 				2D8DD8C01FC2B51B00824C8E /* AppDelegate.swift in Sources */,
 				2D2EA8121FC88908007E29A5 /* ImagePicker.swift in Sources */,
-				2D8DD8D41FC2B63900824C8E /* WKWebViewObject.swift in Sources */,
-				2D8DD8D21FC2B5C800824C8E /* UIWebViewObject.swift in Sources */,
+				2D8DD8D41FC2B63900824C8E /* WKWebViewHandling.swift in Sources */,
+				2D8DD8D21FC2B5C800824C8E /* UIWebViewHandling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
